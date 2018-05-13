@@ -1,0 +1,61 @@
+.headerProfile {
+    font-weight: bold;
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: -0.1em;
+    line-height: 1.28571429em;
+    text-align:center;
+  }
+  
+  .img-cards{
+    width:35px;
+    height:auto;
+  }
+  
+  .img-subheader{
+    width:15px;
+    height:auto;
+  }
+
+  .img-clan-badge{
+    width:60px;
+  }
+  
+  .header {
+    font-weight: bold;
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: -0.5em;
+    line-height: 1.28571429em;
+  }
+  
+  .sub-header{
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.28571429em;
+  }
+  
+  .meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+  
+  .metaProfile {
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.4);
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    text-align:center;
+  }
+  
+  .image-column-profile {
+  
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  
+  .image-column-chest {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  

@@ -1,0 +1,39 @@
+.img-cards{
+    width:35px;
+    height:auto;
+}
+.tableheadermember {
+    background-color: lightblue;
+    color: white;
+}
+
+.header {
+    font-weight: bold;
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-top: -0.5em;
+    line-height: 1.28571429em;
+}
+
+.meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.4);
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+    .desktop-hidden {
+      display: initial;
+    }
+    .mobile-hidden {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .desktop-hidden {
+      display: none;
+    }
+    .mobile-hidden {
+      display: initial;
+    }
+  }

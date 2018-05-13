@@ -1,0 +1,382 @@
+<div class="row">
+  <div class="col-md-4">
+    <h2>{{player.name}}</h2>
+    <h6 class="sub-header">{{player.trophies}} / {{player.stats.maxTrophies}} PB
+      <img class="img-fluid img-subheader" src="http://cr-api.com/static/img/ui/trophy.png"> | {{player.arena.arena}} | {{player.arena.name}} </h6>
+    <br>
+    <h6 class="sub-header">Tag:
+      <span class="float-right">#{{player.tag}}</span>
+    </h6>
+    <h6 class="sub-header">Role:
+      <span class="float-right">{{player.clan.role}}</span>
+    </h6>
+    <h6 class="sub-header">Season Donations:
+      <span class="float-right">{{player.clan.donations}}</span>
+    </h6>
+    <h6 class="sub-header">Donations Received:
+      <span class="float-right">{{player.clan.donationsReceived}}</span>
+    </h6>
+
+    <br />
+  </div>
+  <div class="col-md-5 offset-md-3">
+    <img class="float-right img-clan-badge" [src]="player.clan.badge.image">
+    <h2>{{player.clan.name}}</h2>
+    <h4>#{{player.clan.tag}}</h4>
+    <br />
+    <br />
+
+  </div>
+
+
+</div>
+
+
+<ul class="nav nav-tabs">
+    <li *ngFor="let tab of tabs" class="nav-item">
+      <a (click)="selectNav(tab)" class="nav-link" [ngClass]="{active:tab.active}"> {{tab.name}} </a></li>
+  </ul>
+
+
+<div *ngIf="tabs[0].active" class="row">
+  <div style="margin-top: 40px;" class="col-md-6">
+    <span class="header">League Stats</span>
+    <br>
+    <br> Best Season
+
+    <hr>
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy.png">
+            <div class="header">
+              {{player.leagueStatistics.bestSeason.trophies}}
+            </div>
+            <div class="meta">
+              Trophies
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/legendary-trophy.png">
+            <div class="header">
+              {{player.leagueStatistics.bestSeason.id}}
+            </div>
+            <div class="meta">
+              Date
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <img class="img-fluid img-cards" src="https://royaleapi.com/static/img/arenas/{{player.arena.arena | lowercase | withoutSpaces}}.png"> Current Season ({{player.arena.name}})
+    <hr>
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy.png">
+            <div class="header">
+              {{player.leagueStatistics.currentSeason.trophies}}
+            </div>
+            <div class="meta">
+              Trophies
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/legendary-trophy.png">
+            <div class="header">
+              {{player.leagueStatistics.currentSeason.bestTrophies}}
+            </div>
+            <div class="meta">
+              Best Trophies
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br> Previous Season
+    <hr>
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy.png">
+            <div class="header">
+              {{player.leagueStatistics.previousSeason.trophies}}
+            </div>
+            <div class="meta">
+              Trophies
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/legendary-trophy.png">
+            <div class="header">
+              {{player.leagueStatistics.previousSeason.bestTrophies}}
+            </div>
+            <div class="meta">
+              Best Trophies
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="margin-top: 40px;" class="col-md-6">
+    <span class="header">Battle Stats</span>
+
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.games.wins}}
+            </div>
+            <div class="meta">
+              1v1 Wins
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.games.winsPercent*100 | number : '1.2-2'}}%
+            </div>
+            <div class="meta">
+              Win Percentage
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.games.draws}}
+            </div>
+            <div class="meta">
+              1v1 Draws
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.games.drawsPercent*100 | number : '1.2-2'}}%
+            </div>
+            <div class="meta">
+              Draws Percentage
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.games.losses}}
+            </div>
+            <div class="meta">
+              1v1 Losses
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.games.lossesPercent*100 | number : '1.2-2'}}%
+            </div>
+            <div class="meta">
+              Loss Percentage
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/battle.png">
+            <div class="header">
+              {{player.stats.threeCrownWins}}
+            </div>
+            <div class="meta">
+              Three Crown Wins
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card bg-light text-dark">
+          <div class="card-body">
+            <img class="img-fluid float-right img-cards" src="https://royaleapi.github.io/cr-api-assets/cards/{{player.stats.favoriteCard.key}}.png">
+            <div class="header">
+              {{player.stats.favoriteCard.name}}
+            </div>
+            <div class="meta">
+              Favorite Card
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+<div *ngIf="tabs[1].active" class="row">
+    <div class="col-md-12">
+      <div class="card bg-light text-dark">
+        <div class="card-body">
+          <h4>Chests</h4>
+          <div class="row">
+  
+            <div class=" col-lg-2 col-md-2 col-sm-3 col-4">
+              <div class="image-column-chest">
+                <img class="img-fluid img-profile-cards" src="http://cr-api.com/static/img/chests/chest-legendary.png">
+                <div class="headerProfile">
+                  {{player.chestCycle.legendary}}
+                </div>
+              </div>
+            </div>
+  
+            <div class=" col-lg-2 col-md-2 col-sm-3 col-4">
+              <div class="image-column-chest">
+                <img class="img-fluid img-profile-cards" src="http://cr-api.com/static/img/chests/chest-supermagical.png">
+                <div class="headerProfile">
+                  {{player.chestCycle.superMagical}}
+                </div>
+              </div>
+            </div>
+  
+            <div class=" col-lg-2 col-md-2 col-sm-3 col-4">
+              <div class="image-column-chest">
+                <img class="img-fluid img-profile-cards" src="http://cr-api.com/static/img/chests/chest-magical.png">
+                <div class="headerProfile">
+                  {{player.chestCycle.magical}}
+                </div>
+              </div>
+            </div>
+  
+            <div class=" col-lg-2 col-md-2 col-sm-3 col-4">
+              <div class="image-column-chest">
+                <img class="img-fluid img-profile-cards" src="http://cr-api.com/static/img/chests/chest-epic.png">
+                <div class="headerProfile">
+                  {{player.chestCycle.epic}}
+                </div>
+              </div>
+            </div>
+  
+            <div class=" col-lg-2 col-md-2 col-sm-3 col-4">
+              <div class="image-column-chest">
+                <img class="img-fluid img-profile-cards" src="http://cr-api.com/static/img/chests/chest-giant.png">
+                <div class="headerProfile">
+                  {{player.chestCycle.giant}}
+                </div>
+              </div>
+            </div>
+  
+            <div class=" col-lg-2 col-md-2 col-sm-3 col-4">
+                <div class="image-column-chest">
+                  <img class="img-fluid img-profile-cards" src="http://cr-api.com/static/img/chests/chest-{{player.chestCycle.upcoming[1]}}.png">
+                  <div class="headerProfile">
+                    1
+                  </div>
+                </div>
+              </div>
+  
+  
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div *ngIf="tabs[2].active" class="row">
+    <div class="col-md-12">
+      <div class="card bg-light text-dark">
+        <div class="card-body">
+          <h4>{{player.name}}'s deck:
+            <a href="{{player.deckLink}}">Copy to your device</a>
+          </h4>
+          <div class="row">
+            <div *ngFor="let number of [0,1,2,3,4,5,6,7]" class="image-column-profile col-lg-2 col-md-2 col-sm-3 col-4">
+              <img class="img-fluid img-profile-cards" src='https://royaleapi.github.io/cr-api-assets/cards/{{player.currentDeck[number].key}}.png'>
+              <div class="headerProfile">
+                level {{player.currentDeck[number].level}}
+              </div>
+              <div class="metaProfile">
+                {{player.currentDeck[number].count}}/{{player.currentDeck[number].requiredForUpgrade}}
+              </div>
+              <div class="progress">
+  
+                <div class="progress-bar progress-bar-striped progress-bar-animated" [class.bg-success]="CalculateCardPercentage(player.currentDeck[number])>=100"
+                  [style.width.%]="CalculateCardPercentage(player.currentDeck[number])"></div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+  
+      </div>
+    </div>
+  </div>
+  
