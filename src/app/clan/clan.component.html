@@ -1,213 +1,217 @@
 <div class="row">
-  <div class="col-md-6">
-    <h2>Clan Info</h2>
-    <h4>{{clan.tag}}</h4>
-    <br />
-    <p>{{clan.description}}</p>
-  </div>
-  <div class="col-md-6">
-    <img class="float-right" [src]="clan.badge.image">
-  </div>
+  <div class="col-md-12  col-sm-12">
+    <div class="card">
+      <div class="card-body pb-0">
 
-</div>
+        <div class="row">
+          <div class="col-md-12">
+            <img class="float-right img-clan-badge" [src]="clan.badge.image">
 
-<div class="row">
-  <div class="col-md-4">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy-ribbon.png">
-        <div class="header">
-          {{clan.score}}
-        </div>
-        <div class="meta">
-          Trophies
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy.png">
-        <div class="header">
-          {{clan.requiredScore}}
-        </div>
-        <div class="meta">
-          Required Trophies
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/cards.png">
-        <div class="header">
-          {{clan.donations}}
-        </div>
-        <div class="meta">
-          Donations
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-md-4">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/social.png">
-        <div class="header">
-          {{clan.memberCount}}/50
-        </div>
-        <div class="meta">
-          Members
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/region.png">
-        <div class="header">
-          {{clan.location.name}}
-        </div>
-        <div class="meta">
-          Region
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card bg-light text-dark">
-      <div class="card-body">
-        <img class="img-fluid float-right img-cards" src="https://royaleapi.com/static/img/ui/rank.png">
-        <div class="header">
-          {{clan.type}}
-        </div>
-        <div class="meta">
-          Type
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-<br>
-<p>Click on a player to get more info!</p>
-<div class="row">
-  <div class="col-md-12">
-    <div>
-      <ngx-datatable #myTable 
-      class='material' 
-      [columnMode]="'force'" 
-      [rows]="rows" 
-      [headerHeight]="50" 
-      [footerHeight]="50" 
-      [rowHeight]="50"
-        [scrollbarV]="true" 
-        (page)="onPage($event)" 
-        [limit]="10" 
-        [selected]="selected"
-        [selectionType]="'single'" 
-        (select)='onSelect($event)'>
+            <h2>Clan Info</h2>
+            <h4>{{clan.tag}}</h4>
+            <br />
+            <p>{{clan.description}}</p>
+          </div>
 
 
-        <!-- Row Detail Template -->
-        <ngx-datatable-row-detail [rowHeight]="50" #myDetailRow (toggle)="onDetailToggle($event)">
-          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
-            <div style="padding-left:60px; font-size:14px">
-              <div> {{row.role}},{{row.tag}}, {{row.trophies}},{{row.expLevel}}, {{row.arena.name}}, {{row.donations}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card bg-light text-dark">
+              <div class="card-body">
+                <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy-ribbon.png">
+                <div class="header">
+                  {{clan.score}}
+                </div>
+                <div class="meta">
+                  Trophies
+                </div>
+              </div>
             </div>
-          </ng-template>
-        </ngx-datatable-row-detail>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light text-dark">
+              <div class="card-body">
+                <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/trophy.png">
+                <div class="header">
+                  {{clan.requiredScore}}
+                </div>
+                <div class="meta">
+                  Required Trophies
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light text-dark">
+              <div class="card-body">
+                <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/cards.png">
+                <div class="header">
+                  {{clan.donations}}
+                </div>
+                <div class="meta">
+                  Donations
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card bg-light text-dark">
+              <div class="card-body">
+                <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/social.png">
+                <div class="header">
+                  {{clan.memberCount}}/50
+                </div>
+                <div class="meta">
+                  Members
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light text-dark">
+              <div class="card-body">
+                <img class="img-fluid float-right img-cards" src="http://cr-api.com/static/img/ui/region.png">
+                <div class="header">
+                  {{clan.location.name}}
+                </div>
+                <div class="meta">
+                  Region
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-light text-dark">
+              <div class="card-body">
+                <img class="img-fluid float-right img-cards" src="https://royaleapi.com/static/img/ui/rank.png">
+                <div class="header">
+                  {{clan.type}}
+                </div>
+                <div class="meta">
+                  Type
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <p>Click on a player to get more info!</p>
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <ngx-datatable #myTable class='material' [columnMode]="'force'" [rows]="rows" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+                [scrollbarV]="true" (page)="onPage($event)" [limit]="10">
 
 
-        <!-- Column Templates -->
-        <ngx-datatable-column [width]="50" [resizeable]="true" [sortable]="true" [draggable]="true" [canAutoResize]="false">
-
-          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
-            <a [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded" title="Expand/Collapse Row" (click)="toggleExpandRow(row)"
-              class="desktop-hidden">
-            </a>
-          </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column name="Name" [flexGrow]="3" [minWidth]="100">
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            {{value}}
-          </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column name="Rank" [flexGrow]="1" [minWidth]="50">
-
-          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
-            {{value}}
-          </ng-template>
-        </ngx-datatable-column>
+                <!-- Row Detail Template -->
+                <ngx-datatable-row-detail [rowHeight]="50" #myDetailRow (toggle)="onDetailToggle($event)">
+                  <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+                    <div style="padding-left:60px; font-size:14px">
+                      <div> {{row.role}},{{row.tag}}, {{row.trophies}},{{row.expLevel}}, {{row.arena.name}}, {{row.donations}}</div>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-row-detail>
 
 
-        <ngx-datatable-column name="Role" [flexGrow]="1">
-          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
-            <span class="mobile-hidden">{{column.name}}</span>
-          </ng-template>
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            <span class="mobile-hidden">{{value}}</span>
-          </ng-template>
-        </ngx-datatable-column>
+                <!-- Column Templates -->
+                <ngx-datatable-column [width]="50" [resizeable]="true" [sortable]="true" [draggable]="true" [canAutoResize]="false">
+
+                  <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                    <a [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded" title="Expand/Collapse Row" (click)="toggleExpandRow(row)"
+                      class="desktop-hidden">
+                    </a>
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Name" [flexGrow]="3" [minWidth]="100">
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    {{value}}
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Rank" [flexGrow]="1" [minWidth]="80">
+
+                  <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                    {{value}}
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Action" [flexGrow]="3" [minWidth]="100">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <button type="button" (click)="NavigateToMemberDetails(row.tag)" class="btn btn-sm btn-primary">Info</button>
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Role" [flexGrow]="1">
+                  <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span class="mobile-hidden">{{column.name}}</span>
+                  </ng-template>
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    <span class="mobile-hidden">{{value}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
 
 
-        <ngx-datatable-column name="Tag" [flexGrow]="1">
-          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
-            <span class="mobile-hidden">{{column.name}}</span>
-          </ng-template>
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            <span class="mobile-hidden">{{value}}</span>
-          </ng-template>
-        </ngx-datatable-column>
+                <ngx-datatable-column name="Tag" [flexGrow]="1">
+                  <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span class="mobile-hidden">{{column.name}}</span>
+                  </ng-template>
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    <span class="mobile-hidden">{{value}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
 
 
-        <ngx-datatable-column name="Trophies" [flexGrow]="1">
-          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
-            <span class="mobile-hidden">{{column.name}}</span>
-          </ng-template>
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            <span class="mobile-hidden">{{value}}</span>
-          </ng-template>
-        </ngx-datatable-column>
+                <ngx-datatable-column name="Trophies" [flexGrow]="1">
+                  <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span class="mobile-hidden">{{column.name}}</span>
+                  </ng-template>
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    <span class="mobile-hidden">{{value}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
 
-        <ngx-datatable-column name="Level" prop="expLevel" [flexGrow]="1">
-          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
-            <span class="mobile-hidden">{{column.name}}</span>
-          </ng-template>
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            <span class="mobile-hidden">{{value}}</span>
-          </ng-template>
-        </ngx-datatable-column>
-
-
-        <ngx-datatable-column name="Arena" prop="arena.name" [flexGrow]="1">
-          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
-            <span class="mobile-hidden">{{column.name}}</span>
-          </ng-template>
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            <span class="mobile-hidden">{{value}}</span>
-          </ng-template>
-        </ngx-datatable-column>
-
-        <ngx-datatable-column name="Donations" [flexGrow]="1">
-          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
-            <span class="mobile-hidden">{{column.name}}</span>
-          </ng-template>
-          <ng-template let-value="value" ngx-datatable-cell-template>
-            <span class="mobile-hidden">{{value}}</span>
-          </ng-template>
-        </ngx-datatable-column>
+                <ngx-datatable-column name="Level" prop="expLevel" [flexGrow]="1">
+                  <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span class="mobile-hidden">{{column.name}}</span>
+                  </ng-template>
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    <span class="mobile-hidden">{{value}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
 
 
-      </ngx-datatable>
+                <ngx-datatable-column name="Arena" prop="arena.name" [flexGrow]="1">
+                  <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span class="mobile-hidden">{{column.name}}</span>
+                  </ng-template>
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    <span class="mobile-hidden">{{value}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Donations" [flexGrow]="1">
+                  <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+                    <span class="mobile-hidden">{{column.name}}</span>
+                  </ng-template>
+                  <ng-template let-value="value" ngx-datatable-cell-template>
+                    <span class="mobile-hidden">{{value}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
+
+
+              </ngx-datatable>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>

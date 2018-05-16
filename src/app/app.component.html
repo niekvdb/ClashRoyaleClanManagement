@@ -1,19 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img class="navbarLogo" src="http://www.cafetaria-borst.nl/wp-content/uploads/2016/05/PatatOorlog_8592.png"> Patat Oorlog</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav id="topNavbar" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a (click)="ToggleSideBar()"  class="navbar-brand btn">
+    <img class="navbarLogo" src="http://www.cafetaria-borst.nl/wp-content/uploads/2016/05/PatatOorlog_8592.png"> Patat Oorlog</a>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+
+
       <li class="nav-item active">
         <a [routerLink]="['/clan']" class="nav-link" href="#">Clan
           <span class="sr-only">(current)</span>
         </a>
       </li>
+
       <li class="nav-item">
         <a [routerLink]="['/members']" class="nav-link" href="#">Members</a>
+      </li>
+
+      <li class="nav-item">
+        <a [routerLink]="['/clanwars']" class="nav-link" href="#">Clanwars</a>
       </li>
 
       <li class="nav-item">
@@ -24,11 +29,38 @@
   </div>
 </nav>
 
-<div class="container shadow-lg p-3 mb-5 bg-white rounded">
-    <div id="loader" class="loader" *ngIf="loading">
+<div class="wrapper swipe-box" (swipeleft)="swipe($event.type)"  (swiperight)="swipe($event.type)" data-mc-options='{"touchAction": "pan-y"}' >
+
+  <!-- Sidebar -->
+  <nav [ngClass]="(sideBarActive)?'':'active'" id="sidebar">
+      <!-- Sidebar Header -->
+      <div class="sidebar-header">
+          <h3>#1 CR Clan </h3>
+      </div>
+
+      <!-- Sidebar Links -->
+      <ul class="list-unstyled components">
+          <li class="active"><a [routerLink]="['/']" href="#">Home</a></li>
+          <li><a [routerLink]="['/clan']" href="#">Clan</a></li>
+          <li><a [routerLink]="['/members']" href="#">Members</a></li>
+          <li><a [routerLink]="['/clanwars']" href="#">Clanwars</a></li>
+          <li><a [routerLink]="['/contact']" href="#">Contact</a></li>
+      </ul>
+  </nav>
+
+<!-- Page Content -->
+
+    <div (click)="closeSideNav()"  class="container-fluid">
+      <div id="loader" class="loader" *ngIf="loading">
         Loading...
       </div>
-    <router-outlet *ngIf="!loading"></router-outlet>
+      <router-outlet  *ngIf="!loading"></router-outlet>
+    </div>
 
-   
+
+
 </div>
+
+
+
+

@@ -28,6 +28,7 @@ export class MembersComponent implements OnInit {
       });
   }
   public NavigateToMemberDetails(tag: string) {
+    console.log(tag);
     this.router.navigate(['/members', tag]);
   }
 
@@ -46,7 +47,5 @@ export class MembersComponent implements OnInit {
       console.log('paged!', event);
     }, 100);
   }
-  onSelect({ selected }) {
-    this.NavigateToMemberDetails(selected[0].tag);
-  }
+
 }

@@ -18,5 +18,7 @@ export class Clan {
         public badge: Badge,
         public location: Location,
         public members: Member[],
-        public tracking: Tracking) { }
+        public tracking: Tracking,
+        public role: string,
+        public donationsReceived: number) { }
 }

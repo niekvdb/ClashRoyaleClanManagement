@@ -57,5 +57,48 @@
   .image-column-chest {
     margin-left: 0.5em;
     margin-right: 0.5em;
+    margin-bottom: 20px;
   }
+
+
+
+
+  /*TEST */
+
+  .img-h25 {
+    height: 25px;
+    width: auto;
+  }
+
+  .img-h30 {
+    height: 30px;
+    width: auto;
+}
+
+.img-h100 {
+  height: 100px;
+  width: auto;
+}
+
+.img-icon-card {
+  height: 25px;
+  width: auto;
+}
+
+.arena-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.border-orange {
+  border-color: #f8cb00 !important;
+}
   
+.border-green {
+  border-color: #4dbd74 !important;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+}

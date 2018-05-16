@@ -11,8 +11,8 @@ import { ChestCycle } from '../models/chestCycle';
   styleUrls: ['./member-details.component.css']
 })
 export class MemberDetailsComponent implements OnInit {
-  private player: Player;
-  private tabs: { name: string, active: boolean }[] = [
+  public player: Player;
+  public tabs: { name: string, active: boolean }[] = [
     { "name": "Home", "active": true},
     { "name": "Chests", "active": false},
     { "name": "Deck", "active": false }

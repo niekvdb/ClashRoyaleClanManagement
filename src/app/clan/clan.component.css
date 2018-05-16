@@ -21,6 +21,10 @@
     font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+.img-clan-badge{
+  width:80px;
+}
+
 @media screen and (max-width: 800px) {
     .desktop-hidden {
       display: initial;

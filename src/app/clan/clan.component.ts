@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./clan.component.css']
 })
 export class ClanComponent implements OnInit {
-  private clan: Clan;
+  public clan: Clan;
   @ViewChild('myTable') table: any;
   rows = [];
   timeout: any;
